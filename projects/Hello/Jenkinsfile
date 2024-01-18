@@ -1,19 +1,21 @@
 pipeline {
     agent any
     stages {
-        stage('check version python') {
-            steps {
-                sh 'python --version'
-            }
-        }
-    stage('check current directory') {
+
+        stage('check current directory') {
             steps {
                 sh 'pwd'
             }
         }
-    stage('check host') {
+
+        stage('check host') {
             steps {
                 sh 'hostname'
+            }
+        }
+        stage('check version python') {
+            steps {
+                sh 'python --version'
             }
         }
     }
