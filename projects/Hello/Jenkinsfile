@@ -1,9 +1,19 @@
 pipeline {
-    agent { docker { image 'python:3.12.1-alpine3.19' } }
+    agent any
     stages {
-        stage('build') {
+        stage('check version python') {
             steps {
                 sh 'python --version'
+            }
+        }
+    stage('check current directory') {
+            steps {
+                sh 'pwd'
+            }
+        }
+    stage('check host') {
+            steps {
+                sh 'hostname'
             }
         }
     }
